@@ -303,7 +303,7 @@ strong {
   height: 100vh;
   width: 100%;
   background-color: #1F2535;
-  background: url(../img/vida.PNG) no-repeat center center fixed;
+  background: url(../img/vida.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -1374,7 +1374,7 @@ article img {
 }
 
 #section-door {
-  background-image: url(../images/door.PNG);
+  background-image: url(../images/door.png);
   min-height: 100vh;
   width: 100%;
 }
