@@ -16,7 +16,7 @@
 
 .open-nav {
   max-height: 400px !important;
-  background-color: #262C3A;
+  background-color: #611232;
 }
 
 .open-nav .mobile-toggle {
@@ -188,7 +188,7 @@ nav ul a.active {
 
 @media only screen and (max-width: 766px) {
   .sticky {
-    background-color: #101529;
+    background-color: #611232;
   }
 
   .main_h {
@@ -222,7 +222,7 @@ nav ul a.active {
     padding-right: 0px;
     padding-bottom: 5px;
     padding-left: 0px;
-    background-color: #3F4658;
+    background-color: #611232;
     color: #9B9CB9;
     font-weight: 700;
     font-style: normal;
@@ -230,7 +230,7 @@ nav ul a.active {
 
   nav ul a:hover {
     color: #CDCDDC;
-    background-color: #32394B;
+    background-color: #611232;
   }
 
   nav ul li {
@@ -246,7 +246,7 @@ nav ul a.active {
   nav ul a.active {
     border-bottom-style: none;
     padding-bottom: 5px !important;
-    background-color: #32394B;
+    background-color: #611232;
   }
 
   .line:after {
@@ -255,13 +255,13 @@ nav ul a.active {
   }
 
   a.out {
-    background-color: #3F4658;
+    background-color: #611232;
     color: #9B9CB9;
   }
 
   a.out:before {
     color: #CDCDDC;
-    background-color: #32394B;
+    background-color: #611232;
   }
 }
 
