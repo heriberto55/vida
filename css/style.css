@@ -610,7 +610,7 @@ a.scroll::after {
   font-weight: 900;
   text-align: center;
   padding-top: 60px;
-  padding-bottom: 40px;
+  padding-bottom: 90px;
 }
 
 .title-5 {
@@ -1092,8 +1092,8 @@ article img {
 .cbp-qtrotator .cbp-qtcontent {
   position: absolute;
   height: 180px;
-  border-top: 2px solid #f4f4f4;
-  padding: 20px 0;
+  border-top: 1px solid #f4f4f4;
+  padding: 5px 0;
   top: 0;
   z-index: 0;
   opacity: 0;
