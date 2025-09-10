@@ -307,7 +307,7 @@ strong {
   height: 100vh;
   width: 100%;
   background-color: #1F2535;
-  background: url(../img/vida.png) no-repeat center center fixed;
+  background: url(../img/vida.jpeg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -315,6 +315,18 @@ strong {
   padding-top: 10%;
 }
 
+.hero2 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-color: #1F2535;
+  background: url(../img/sal.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 10%;
+}
 section {
   width: 100%;
   position: relative;
@@ -328,7 +340,7 @@ section {
   min-height: 100vh;
   width: 100%;
   background-color: #141C31;
-  background: url(../images/opatija3.jpg);
+  background: url(../images/opatija3.jpeg);
 }
 
 #section-4 {
@@ -341,13 +353,13 @@ section {
 
 #section-7 {
   background-color: #F6F6F6;
-  background-image: url(../images/ejercicio.png);
+  background-image: url(../images/ejercicio.jpeg);
 }
 /* INTRO TITLE */
 
 h1#title-1 {
   text-align: center;
-  color: rgba(250, 250, 250, 0.9);
+  color: #9c244a;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   letter-spacing: 2px;
@@ -1833,6 +1845,9 @@ ul.blogsocico li.youtube a:hover, #sidebar ul.blogsocico li.youtube a:hover {
   .hero {
     background-image: url(../img/istria768.png);
   }
+  .hero2 {
+    background-image: url(../img/sal.jpg);
+  }
 
   .absomid {
     width: 94%;
@@ -1861,7 +1876,7 @@ ul.blogsocico li.youtube a:hover, #sidebar ul.blogsocico li.youtube a:hover {
 @media all and (max-width: 768px) {
 	
   .heroo {
-    background-image: url(../img/sal.jpeg);
+    background-image: url(../img/sal.jpg);
   }
 
   .absomid {
