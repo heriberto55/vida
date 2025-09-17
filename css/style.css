@@ -352,7 +352,7 @@ section {
   min-height: 100vh;
   width: 100%;
   background-color: #141C31;
-  background: url(../images/opatija3.jpeg);
+  background: url(../images/portadavida.jpg);
 }
 
 #section-4 {
@@ -669,7 +669,7 @@ a.scroll::after {
 }
 
 .icon:hover {
-  color: #0099ff;
+  color: #CA6553;
 }
 
 /* FA ICON GEAR */
@@ -998,27 +998,28 @@ h5.title0 {
 }
 
 .lightblue {
-  background: #0099ff;
+  background: #CA6553;
 }
 
 .purple {
-  background-color: #9A12B3;
+  background-color: #C66284;
 }
 
 .pink {
-  background-color: #FF00FE;
+  background-color: #EA474A;
 }
 
 .pictonblue {
-  background-color: #22A7F0;
+  background-color: #F28E36;
 }
 
 .indigo {
-  background-color: #3F51B5;
+  background-color: #B6CF67;
 }
 
+
 .pink7 {
-  background-color: #E91E63;
+  background-color: #685767;
 }
 
 .gray2 {
@@ -1420,7 +1421,7 @@ article img {
 
 .title-small {
   font-size: 20px;
-  color: #0099ff;
+  color: #CA6553;
   letter-spacing: 2px;
   font-weight: 400;
 }
@@ -1774,7 +1775,7 @@ ul.blogsocico li.youtube a:hover, #sidebar ul.blogsocico li.youtube a:hover {
   .bghwhite {
     border-left-width: 5px;
     border-left-style: solid;
-    border-left-color: #0099ff;
+    border-left-color: #CA6553;
     width: 50%;
   }
 
