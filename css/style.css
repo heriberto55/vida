@@ -372,7 +372,9 @@ section {
 h1#title-1 {
   text-align: center;
   color: #9c244a;
-  font-family: 'Roboto', sans-serif;
+   font-family: 'Noto Sans', cursive;
+  font-weight: 800; /* bold */
+
   font-size: 20px;
   letter-spacing: 2px;
   line-height: 50px;
@@ -381,7 +383,8 @@ h1#title-1 {
 }
 
 #title-1 em {
-  font-family: 'EB Garamond', serif;
+   font-family: 'Noto Sans', cursive;
+  font-weight: 800; /* bold */
   font-size: 100px;
   text-transform: uppercase;
   letter-spacing: 5px;
