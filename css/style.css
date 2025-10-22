@@ -1476,6 +1476,18 @@ article img {
   border-top-color: #fcf8ed;
   border-bottom-color: #fcf8ed;
 }
+#graybg2 {
+  background-color: #FFFFFF;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: #ffff;
+  border-bottom-color: #ffff;
+}
 
 #blog {
   background: #F7F7F7;
