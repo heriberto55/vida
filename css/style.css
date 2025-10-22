@@ -1998,16 +1998,7 @@ ul.blogsocico li.youtube a:hover, #sidebar ul.blogsocico li.youtube a:hover {
     width: 320px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
+.polygon#verduras {
+    fill: red;
+    cursor: pointer;
+}
