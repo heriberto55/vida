@@ -43,6 +43,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.8/font-awesome-animation.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<style>
+  .polygon#verduras {
+    fill: red;
+    cursor: pointer;
+}
+</style>
+
 </head>
 <body>
 <div class="animsition-overlay">
@@ -162,8 +169,68 @@
       </ul>
       <br>
     
-                    <h3 class="title-small center"><iframe src="images/plato.png" style="width: 400px;"  height="400px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></h3>
+                    <h3 class="title-small center">
+                      <svg version="1.1" id="plato-interactivo" 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          xmlns:xlink="http://www.w3.org/1999/xlink" 
+                          viewBox="0 0 792 612" 
+                          preserveAspectRatio="xMidYMid meet" 
+                          style="display:block; margin:0 auto; width: clamp(260px, 80vw, 620px); height: auto;">
+                        <style type="text/css">
+                          .st0 { 
+                            fill: rgba(255, 255, 255, 0.01) !important; 
+                            stroke: none;
+                            pointer-events: all; 
+                            cursor: pointer; 
+                            transition: all 0.3s ease;
+                          }
+                          #verduras:hover { fill: rgba(76, 175, 80, 0.5) !important; }
+                          #futas:hover { fill: rgba(139, 195, 74, 0.5) !important; }
+                          #cereales:hover { fill: rgba(255, 152, 0, 0.5) !important; }
+                          #leguminosas:hover { fill: rgba(244, 67, 54, 0.5) !important; }
+                          #carnes:hover { fill: rgba(211, 47, 47, 0.5) !important; }
+                        </style>
+                        <image x="0" y="0" width="792" height="612"
+                              style="overflow:visible; pointer-events:none;" 
+                              xlink:href="images/plato.svg" />
+                        <g id="hit-areas">
+                          <polygon id="leguminosas" class="st0" points="369.59,295.47 369.59,504.88 478.76,433.35 527.71,351.47" />
+                          <polygon id="carnes" class="st0" points="369.59,292.18 527.71,351.47 539,282.29 517.35,227.24" />
+                          <polygon id="futas" class="st0" points="369.59,287.47 512.18,222.06 457.59,155.71 369.59,134.06" />
+                          <polygon id="verduras" class="st0" points="365.35,289.35 369.59,131.24 290.06,152.41 223.24,237.12" />
+                          <polygon id="cereales" class="st0" points="366.29,295.47 366.29,460.18 287.71,439 241.12,397.59 212.88,340.65 219.47,243.24" />
+                        </g>
+                      </svg>
+                    </h3>
 
+                    <div id="modal-verduras" style="display:none; padding:20px; max-width:600px; background:#fff;">
+                      <h3>Verduras</h3>
+                      <p><strong>Las verduras</strong> aportan vitaminas, minerales y fibras, así como color y textura a la dieta. Además de contener mucha agua y permite la buena hidratación.</p>
+                    </div>
+                    <div id="modal-futas" style="display:none; padding:20px; max-width:600px; background:#fff;">
+                      <h3>Frutas</h3>
+                      <p><strong>Las frutas</strong> son una gran fuente de azúcares no refinados y de agua, lo que proporciona energía y una buena hidratación.</p>
+                    </div>
+                    <div id="modal-cereales" style="display:none; padding:20px; max-width:600px; background:#fff;">
+                      <h3>Cereales y harinas</h3>
+                      <p><strong>Los cereales</strong> y harinas son la principal fuente de energía que el organismo utiliza para realizar sus actividades diarias, por lo que su consumo es fundamental para el buen funcionamiento orgánico.</p>
+                    </div>
+                    <div id="modal-leguminosas" style="display:none; padding:20px; max-width:600px; background:#fff;">
+                      <h3>Leguminosas</h3>
+                      <p><strong>Las leguminosas</strong> son una gran fuente de proteínas y su consumo es muy recomendable para la fuerza muscular y el crecimiento de los músculos.</p>
+                    </div>
+                    <div id="modal-carnes" style="display:none; padding:20px; max-width:600px; background:#fff;">
+                      <h3>Alimentos de origen animal</h3>
+                      <p><strong>Alimentos de origen animal</strong>: las carnes y pescados son otra gran fuente de proteína pero su consumo debe ser limitado porque aportan grandes cantidades de grasas saturadas.</p>
+                    </div>
+
+                    <!-- Contenedor de modal ligero con overlay oscuro -->
+                    <div id="simple-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.65); z-index:1050; align-items:center; justify-content:center;">
+                      <div id="simple-modal" style="background:#fff; color:#333; width:min(90vw, 700px); max-height:80vh; overflow:auto; border-radius:10px; box-shadow:0 20px 50px rgba(0,0,0,.5); position:relative;">
+                        <button id="simple-close" aria-label="Cerrar" style="position:absolute; top:8px; right:10px; border:none; background:transparent; font-size:28px; line-height:1; cursor:pointer; color:#666;">×</button>
+                        <div id="simple-modal-content" style="padding:22px 24px;"></div>
+                      </div>
+                    </div>
 
       <br>
       <p>Después de introducir el tema de los grupos de alimentos pueden ver algunos de los siguientes videos sobre el tema:</p>
@@ -614,6 +681,7 @@
 <script type="text/javascript" src="js/jquery.matchHeight-min.js"></script> 
 <script src="js/wow.min.js"></script> 
 <script src="js/animsition.min.js"></script> 
+<script src="js/jquery.the-modal.js"></script>
 <script>
 $(".enticlick").click(function() {
   window.location = $(this).find("a").attr("href"); 
@@ -622,6 +690,155 @@ $(".enticlick").click(function() {
 </script> 
 <script src="js/functions.js"></script> 
 <script src="js/you-video.js"></script> 
+<script>
+  // Modal simple basado en overlay
+  (function(){
+    var overlay = document.getElementById('simple-overlay');
+    var modal = document.getElementById('simple-modal');
+    var content = document.getElementById('simple-modal-content');
+    var closeBtn = document.getElementById('simple-close');
+    function openSimple(id){
+      var src = document.getElementById(id);
+      if(!src) return;
+      content.innerHTML = src.innerHTML;
+      overlay.style.display = 'flex';
+    }
+    function closeSimple(){ overlay.style.display = 'none'; content.innerHTML = ''; }
+    overlay.addEventListener('click', function(e){ if(e.target === overlay) closeSimple(); });
+    closeBtn.addEventListener('click', closeSimple);
+
+    // Interacción SVG
+    var svgRoot = document.getElementById('plato-interactivo');
+    if(!svgRoot) return;
+    var map = { verduras:'modal-verduras', futas:'modal-futas', cereales:'modal-cereales', leguminosas:'modal-leguminosas', carnes:'modal-carnes' };
+
+    Object.keys(map).forEach(function(id){
+      var node = svgRoot.querySelector('#'+id);
+      if(!node) return;
+      node.style.cursor = 'pointer';
+      node.style.pointerEvents = 'all';
+      if(!node.getAttribute('fill') || node.getAttribute('fill')==='none'){ node.setAttribute('fill','rgba(255,255,255,0.001)'); }
+      node.addEventListener('click', function(ev){ ev.stopPropagation(); openSimple(map[id]); });
+    });
+
+    // Click universal dentro del plato
+    svgRoot.addEventListener('click', function(evt){
+      var t = evt.target; if(t && t.classList && t.classList.contains('st0')) return;
+      try{
+        var pt = svgRoot.createSVGPoint(); pt.x = evt.clientX; pt.y = evt.clientY;
+        var p = pt.matrixTransform(svgRoot.getScreenCTM().inverse());
+        var cx = 369.6, cy = 295.5; var dx=p.x-cx, dy=cy-p.y; var ang=Math.atan2(dy,dx)*180/Math.PI; if(ang<0) ang+=360;
+        var r2=dx*dx+dy*dy, rMax=250; if(r2>rMax*rMax) return;
+        var target; if(ang>=60&&ang<130) target='futas'; else if(ang>=130&&ang<210) target='verduras'; else if(ang>=210&&ang<300) target='cereales'; else if(ang>=300||ang<20) target='leguminosas'; else target='carnes';
+        if(target) openSimple(map[target]);
+      }catch(e){}
+    });
+    // Cierre con ESC
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') overlay.style.display==='flex' && (overlay.style.display='none'); });
+  })();
+</script>
+
+<script>
+  (function(){
+    var svgObj = document.getElementById('platoSvg');
+    var inlineHost = document.getElementById('platoSvgInline');
+    if(!svgObj) return;
+
+    function bindClicks(root){
+      var map = {
+        verduras: '#modal-verduras',
+        futas: '#modal-futas',
+        cereales: '#modal-cereales',
+        leguminosas: '#modal-leguminosas',
+        carnes: '#modal-carnes'
+      };
+      try {
+        // Inyecta estilos dentro del SVG para tener control visual aunque esté en <object>
+        var svgEl = root.querySelector ? root.querySelector('svg') : (root.documentElement || null);
+        if(svgEl){
+          var styleEl = (root.createElementNS ? root.createElementNS('http://www.w3.org/2000/svg','style') : document.createElement('style'));
+          styleEl.setAttribute('type','text/css');
+          styleEl.textContent = '\npolygon, path, rect { pointer-events: all; }\npolygon:hover, path:hover, rect:hover { cursor:pointer; }\n.active-region { fill: #a57f2c !important; fill-opacity: 0.6 !important; }\n';
+          (svgEl.appendChild ? svgEl.appendChild(styleEl) : root.appendChild(styleEl));
+        }
+      } catch(e) {}
+      Object.keys(map).forEach(function(id){
+        var node = root.getElementById ? root.getElementById(id) : (root.querySelector ? root.querySelector('#'+id) : null);
+        if(node){
+          node.style.cursor = 'pointer';
+          try {
+            node.style.pointerEvents = 'all';
+            var currentFill = node.getAttribute && node.getAttribute('fill');
+            if(!currentFill || currentFill === 'none'){
+              node.setAttribute('fill', 'rgba(255,255,255,0.001)');
+            }
+          } catch(e) {}
+          // Hover: resalta sin perder el fill original
+          var originalFill = node.getAttribute('fill');
+          node.addEventListener('mouseenter', function(){
+            if(!node.classList.contains('active-region')){
+              node.setAttribute('fill', 'rgba(165,127,44,0.35)');
+            }
+          });
+          node.addEventListener('mouseleave', function(){
+            if(!node.classList.contains('active-region')){
+              if(originalFill){ node.setAttribute('fill', originalFill); } else { node.setAttribute('fill','rgba(255,255,255,0.001)'); }
+            }
+          });
+          // Click: alterna selección visual y dispara acción (si hay modal definido)
+          node.addEventListener('click', function(){
+            try {
+              if(node.classList.contains('active-region')){
+                node.classList.remove('active-region');
+              } else {
+                node.classList.add('active-region');
+              }
+            } catch(e) {}
+            if(window.jQuery && jQuery.fn.modal && map[id]){
+              $(map[id]).modal().open();
+            }
+          });
+        }
+      });
+    }
+
+    function injectInline(svgText){
+      if(!inlineHost) return;
+      svgObj.style.display = 'none';
+      inlineHost.style.display = 'inline-block';
+      inlineHost.innerHTML = svgText;
+      var svgEl = inlineHost.querySelector('svg');
+      if(svgEl){
+        svgEl.setAttribute('width','400');
+        svgEl.setAttribute('height','400');
+        bindClicks(svgEl);
+      } else {
+        bindClicks(inlineHost);
+      }
+    }
+
+    function tryInlineFallback(){
+      fetch('images/plato.svg').then(function(r){ return r.text(); }).then(injectInline).catch(function(){});
+    }
+
+    svgObj.addEventListener('load', function(){
+      try{
+        var svgDoc = svgObj.contentDocument;
+        if(svgDoc){ bindClicks(svgDoc); return; }
+      }catch(e){ /* fallthrough */ }
+      tryInlineFallback();
+    });
+
+    // Si el objeto ya se cargó antes del listener o falla el onload
+    setTimeout(function(){
+      try{
+        if(svgObj.contentDocument){ bindClicks(svgObj.contentDocument); return; }
+      }catch(e){}
+      tryInlineFallback();
+    }, 800);
+  })();
+  </script>
+
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-15815880-3']);
