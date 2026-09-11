@@ -2014,3 +2014,16 @@ ul.blogsocico li.youtube a:hover, #sidebar ul.blogsocico li.youtube a:hover {
     fill: red;
     cursor: pointer;
 }
+
+/* Removes the old blue loading screen and keeps pages visible immediately. */
+.animsition-overlay {
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+.animsition-loading,
+.animsition-overlay-slide {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}

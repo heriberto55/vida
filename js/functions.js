@@ -96,36 +96,10 @@ var wow = new WOW(
 wow.init();
 
 
-// ANIMISTION
-  $(document).ready(function() {
-    $('.animsition-overlay').animsition({
-      inClass: 'overlay-slide-in-bottom',
-      outClass: 'overlay-slide-out-top',
-      overlay : true,
-      overlayClass : 'animsition-overlay-slide',
-      overlayParentElement : 'body'
-    })
-    .one('animsition.inStart',function(){
-
-      $('body').removeClass('bg-init');
-
-      $(this)
-        .find('.item')
-        .append('<h2 class="target">Callback: Start</h2>');
-
-      console.log('event -> inStart');
-    })
-    .one('animsition.inEnd',function(){
-      $('.target', this).html('Callback: End');
-      console.log('event -> inEnd');
-    })
-    .one('animsition.outStart',function(){
-      console.log('event -> outStart');
-    })
-    .one('animsition.outEnd',function(){
-      $('.target', this).html('Callback: End');
-      console.log('event -> outEnd');
-    });
-
-  });
+// Disable the old page-transition loader so pages show immediately.
+$(document).ready(function() {
+  $('body').removeClass('bg-init');
+  $('.animsition-overlay').css('opacity', 1);
+  $('.animsition-loading, .animsition-overlay-slide').remove();
+});
 
