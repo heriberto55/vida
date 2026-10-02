@@ -57,20 +57,40 @@ $allowed = [
     'video/mp4' => 'mp4',
     'video/webm' => 'webm',
     'video/ogg' => 'ogv',
+    'application/pdf' => 'pdf',
+    'application/msword' => 'doc',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => 'docx',
+    'application/vnd.ms-excel' => 'xls',
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' => 'xlsx',
+    'application/vnd.ms-powerpoint' => 'ppt',
+    'application/vnd.openxmlformats-officedocument.presentationml.presentation' => 'pptx',
+    'text/plain' => 'txt',
+    'text/csv' => 'csv',
+    'application/zip' => 'zip',
+    'application/x-zip-compressed' => 'zip',
 ];
 
-if (!isset($allowed[$mime])) {
+$extension = strtolower(pathinfo((string) ($file['name'] ?? 'archivo'), PATHINFO_EXTENSION));
+$blockedExtensions = [
+    'php', 'php3', 'php4', 'php5', 'phtml', 'phar',
+    'html', 'htm', 'js', 'mjs', 'css',
+    'exe', 'bat', 'cmd', 'com', 'scr', 'msi', 'vbs', 'ps1',
+    'sh', 'cgi', 'pl', 'py', 'jar',
+];
+
+if ($extension === '' || in_array($extension, $blockedExtensions, true)) {
     http_response_code(400);
-    echo json_encode(['ok' => false, 'message' => 'Solo se permiten imagenes y videos web.']);
+    echo json_encode(['ok' => false, 'message' => 'Este tipo de archivo no esta permitido.']);
     exit;
 }
+
+$extension = $allowed[$mime] ?? $extension;
 
 if (!is_dir(CMS_UPLOAD_DIR)) {
     mkdir(CMS_UPLOAD_DIR, 0755, true);
 }
 
 $originalName = pathinfo((string) ($file['name'] ?? 'archivo'), PATHINFO_FILENAME);
-$extension = $allowed[$mime];
 $name = cms_slug($originalName) . '-' . date('Ymd-His') . '-' . bin2hex(random_bytes(3)) . '.' . $extension;
 $destination = CMS_UPLOAD_DIR . '/' . $name;
 
@@ -83,5 +103,7 @@ if (!move_uploaded_file($tmpName, $destination)) {
 echo json_encode([
     'ok' => true,
     'url' => CMS_UPLOAD_URL . '/' . $name,
-    'type' => strpos($mime, 'image/') === 0 ? 'image' : 'video',
+    'type' => strpos($mime, 'image/') === 0 ? 'image' : (strpos($mime, 'video/') === 0 ? 'video' : 'file'),
+    'extension' => $extension,
+    'name' => (string) ($file['name'] ?? $name),
 ]);
